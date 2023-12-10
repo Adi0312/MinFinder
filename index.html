@@ -1,0 +1,73 @@
+<html>
+ 	<head>
+		<title> Min Finder By Aditya </title>
+	<style>
+		*{ font-size:50px; font-family:Arial;}
+		body {background-color:skyblue;}
+		.btn { width:10%;
+margin-right:2%;
+background-color: red; 
+color:white;
+border-radius:10px;}
+	</style>
+	<script>
+	function findmin()
+
+	{
+		event.preventDefault();
+		let n1 = document.getElementById("n1");
+		let n2= document.getElementById("n2");
+		let ans=document.getElementById("ans");
+			
+		let action= document.activeElement.value;
+		let num1 = parseFloat(n1.value);
+		let num2 = parseFloat(n2.value);
+
+		if(action == "M1")
+		{
+			let res = num1 < num2 ? num1 : num2;
+				
+			let msg = "min1 = " + res;
+			ans.innerHTML = msg;
+				
+			}
+
+
+			else if (action =="M2")
+			{
+			let res =0.0;
+				if (num1<num2)  	res = num1;
+				
+				else 			res = num2;
+				let msg= "min2 = " + res;
+				ans.innerHTML = msg;
+
+			}
+			else
+			{ 
+			  let msg = "min3 = " + Math.min(num1,num2);
+				ans.innerHTML = msg;
+
+			}
+
+		}
+	</script>
+
+	</head>
+
+ 	<body>
+	<center>
+		<h1> Min Finder App </h1>
+	<form onsubmit= "findmin()">
+		<input type = "number" step = "any" placeholder="Enter First Number" required id="n1" />
+	<br><br>
+	<input type = "number" step = "any" placeholder="Enter second Number" required id="n2" />
+<br><br>
+<input type = "Submit" value="M1" class="btn" />
+<input type = "Submit" value="M2"class="btn" />
+<input type = "Submit" value="M3"class="btn" />
+</form>
+<h2 id="ans"/>
+	</center>
+	</body>
+</html>
